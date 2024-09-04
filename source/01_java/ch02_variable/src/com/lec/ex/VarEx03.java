@@ -1,0 +1,33 @@
+package com.lec.ex;
+// 실수는 double을 쓰자.
+public class VarEx03 {
+	public static void main(String[] args) {
+		//변수선언
+		float f = 3.14159265359F; // 4byte
+		double d = 3.14159265359; // 8byte
+		//출력
+		System.out.println("f = " + f);
+		System.out.println("d = " + d);
+		//조건에 따른 출력
+		if (f == d) {
+			System.out.println("f와 d값은 같다.");
+		}
+		else {
+			System.out.println("f와 d값은 다르다.");
+		}
+		//변수 재할당
+		f = 10.1F;
+		d = 10.1;
+		//출력
+		System.out.println("f = " + f);
+		System.out.println("d = " + d);
+		//조건에 따른 출력
+		if (f == d) {
+			System.out.println("f와 d값은 같다.");
+		}
+		else {
+			System.out.println("f와 d값은 다르다.");
+		}
+		
+	}
+}
