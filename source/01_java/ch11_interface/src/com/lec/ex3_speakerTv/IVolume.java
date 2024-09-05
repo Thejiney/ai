@@ -1,7 +1,7 @@
 package com.lec.ex3_speakerTv;
 
 // 인터페이스 : (1) 작업명세서 역할 (2) 다형성 구현 (3) 기능을 부품화
-// 작업명세서 역할
+// 작업명세서 역할 ex
 // 인터페이스에는 static final 변수(상수)와 추상메소드(예외 : default 메소드, static 메소드)
 public interface IVolume {
 	public void volumeUp();// 볼륨이 1씩 증가
