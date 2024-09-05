@@ -11,8 +11,9 @@ public abstract class Employee {
 	public abstract int computePay();
 
 	public int computeIncentive() {
-		if (computePay() >= 3000000) {
-			return (int) (computePay() * 0.05);
+		int pay = computePay();
+		if (pay >= 3000000) {
+			return (int) (pay * 0.05);
 		}
 		return 0;
 	}

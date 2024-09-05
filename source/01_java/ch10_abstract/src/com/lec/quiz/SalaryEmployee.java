@@ -11,6 +11,6 @@ public class SalaryEmployee extends Employee {
 
 	@Override
 	public int computePay() {
-		return annalsalary / 12;
+		return annalsalary / 14;
 	}
 }
