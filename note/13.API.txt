@@ -1,0 +1,36 @@
+String
+[자료형]	[문법]				[수행동작]
+String 	concat(String str) 			: 저장된 문자열과 str문자열을 결합
+String 	substring(int begin) 		: 시작위치부터 마지막까지의 문자열을 반환
+int 	length() 				: 문자열 길이를 반환
+String 	toUpperCase() 			: 대문자로 반환
+String 	toLowerCase() 			: 소문자로 반환
+char 	charAt(int index) 			: index 위치의 문자를 반환
+int 	indexOf(char ch) 			: 첫번째 ch문자의 위치를 반환
+int 	lastIndexOf(char ch) 		: 마지막 ch문자의 위치를 반환
+boolean 	equals(String str) 			: 지정된문자열과 str문자열이 같은지 비교
+boolean 	equalslgnoreCase(String str) 		: 대소문자구분없이 지정된문자열과 str문자열이 같은지 비교
+String 	trim() 				: 문자열 앞뒤 공백제거
+String 	replace(char old, char new) 		: 문자열 내의 old문자를 new문자로 반환
+String  	repalceAll(String old, String new) 	: 문자열 내의 정규표현식 문자열을 new로 반환
+
+Math
+ceil, round, floor, random
+
+Object
+toString(), eqauls(Object obj) <- Override 해서 활용하는 경우가 많음.
+
+Scanner
+nextInt(), next() -> 첫 \n 이전을 리턴후 버퍼를 남김
+nextLine() -> 첫 \n 이전의 \n을 제외한 whitespace를 포함한 내용을 리턴 후 버퍼를 지움
+
+Wrapper
+기초 데이터	객체 데이터
+byte		Byte
+short		Short
+int		Integer
+long		Long
+float		Float
+boolean		Boolean
+char		Character
+
