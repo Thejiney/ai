@@ -14,6 +14,10 @@ String 	trim() 				: 문자열 앞뒤 공백제거
 String 	replace(char old, char new) 		: 문자열 내의 old문자를 new문자로 반환
 String  	repalceAll(String old, String new) 	: 문자열 내의 정규표현식 문자열을 new로 반환
 
+날짜형
+Date, Calendar(Calendar.getInstance()이용해서 생성), GregorianCalendar
+SimpleDateForamat
+
 Math
 ceil, round, floor, random
 
