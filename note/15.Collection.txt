@@ -1,4 +1,5 @@
 Collection
 ArrayList : 	배열과 매우 비슷. 인덱스가 존재하며 데이터는 중복을 허용. 인덱스가 가장 중요
 Map 계열:	List계열과 달리 인덱스가 없고, 키와 값만 존재. 키 값은 유니크
-Set계열 :		데이터의 순서X -> 인덱스X, 중복된 데이터X
+Set계열 :		데이터의 순서X -> 인덱스X, 중복된 데이터X (TreeSet => 자동 sort)
+Map,Set 출력시 Iterator(반복자)사용
