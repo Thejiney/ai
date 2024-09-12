@@ -161,12 +161,12 @@ SELECT * FROM DEPT;
 --2.	EMP 테이블에서 empno가 7788인 사원의 ename과 deptno를 출력
     SELECT ENAME, DEPTNO 
         FROM EMP
-        WHERE EMPNO = '7788';
-    
---3.	연봉이 24000이상인 사번, 이름, 급여 출력 (급여순정렬)
+        WHERE EMPNO = 7788;
+        
+--3.	연봉(SAL*12+COMM)이 24000이상인 사번, 이름, 급여 출력 (급여순정렬)
     SELECT EMPNO, ENAME, SAL 
         FROM EMP
-        WHERE SAL*12>=24000
+        WHERE SAL*12+NVL(COMM,0)>=24000
         ORDER BY SAL;
     
 --4.	입싸일이 1981년 2월 20과 1981년 5월 1일 사이에 입사한 사원의 사원명, 직책, 입사일을 출력 (단 hiredate 순으로 출력)
