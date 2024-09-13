@@ -30,7 +30,7 @@ SELECT * FROM EMP WHERE SAL^=3000;
     SELECT * FROM EMP WHERE ENAME < 'D';
     -- EX2. 81년도 이전에 입사한 사원의 모든 필드
     SELECT * FROM EMP WHERE HIREDATE < '81/01/01';
-    
+
 -- 4. 조건절에 논리연산자 : AND, OR, NOT
     -- EX1. 급여(SAL)가 2000이상 3000이하인 직원의 모든 필드
     SELECT * FROM EMP WHERE SAL>=2000 AND SAL<=3000; -- 2000 <= SAL <= 3000
@@ -172,7 +172,8 @@ SELECT * FROM DEPT;
 --4.	입싸일이 1981년 2월 20과 1981년 5월 1일 사이에 입사한 사원의 사원명, 직책, 입사일을 출력 (단 hiredate 순으로 출력)
     SELECT ENAME, JOB, HIREDATE
         FROM EMP
-        WHERE HIREDATE BETWEEN '81/02/20' AND '81/05/01';
+        WHERE HIREDATE BETWEEN '81/02/20' AND '81/05/01'
+        ORDER BY HIREDATE;
     
 --5.	deptno가 10,20인 사원의 모든 정보를 출력 (단 ename순으로 정렬)
     SELECT *
@@ -223,7 +224,7 @@ SELECT * FROM DEPT;
 -- 업무, 급여를 검색하시오.
     SELECT EMPNO, ENAME, HIREDATE, JOB, SAL
         FROM EMP
-        WHERE HIREDATE LIKE '81%' AND NOT JOB='SALESMAN';
+        WHERE HIREDATE LIKE '81%' AND JOB!='SALESMAN';
     
 --14.	사번, 사원명, 입사일, 업무, 급여를 급여가 높은 순으로 정렬하고, 
 -- 급여가 같으면 입사일이 빠른 사원으로 정렬하시오.
