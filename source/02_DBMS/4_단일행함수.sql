@@ -854,7 +854,7 @@ FROM
 SELECT
 	ENAME,
 	HIREDATE,
-	NEXT_DAY(ADD_MONTHS(HIREDATE, 6), '월')
+	NEXT_DAY(ADD_MONTHS(HIREDATE, 6), '월') "DATE"
 FROM
 	EMP;
 --4. 이름, 입사일, 입사일로부터 현재까지의 개월수, 급여, 입사일부터 현재까지의 받은 급여의 총계를 출력
