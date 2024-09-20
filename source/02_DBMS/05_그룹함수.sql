@@ -256,7 +256,7 @@ FROM
 GROUP BY
 	DEPTNO
 ORDER BY
-	SUM(SAL);
+	SUM(SAL) DESC;
 --- 부서명별	
 SELECT
 	DNAME, COUNT(*), ROUND(AVG(SAL),2), MIN(SAL), MAX(SAL),
@@ -268,7 +268,19 @@ WHERE
 GROUP BY
 	DNAME
 ORDER BY
-	SUM(SAL);
+	SUM(SAL) DESC;
+-- 부서명&부서번호
+SELECT
+	DNAME, E.DEPTNO, COUNT(*), ROUND(AVG(SAL),2), MIN(SAL),
+	MAX(SAL), SUM(SAL)
+FROM
+	EMP E, DEPT D
+WHERE
+	E.DEPTNO = D.DEPTNO
+GROUP BY
+	DNAME, E.DEPTNO
+ORDER BY
+	SUM(SAL) DESC;
 -- 5. 부서별, 업무별 그룹하여 결과를 부서번호, 업무, 인원수, 급여의 평균, 급여의 합을 출력(부서번호, 업무순으로 오름차순 정렬)
 --부서번호별
 SELECT
@@ -331,7 +343,7 @@ ORDER BY
 --11. 부서별 급여평균, 부서별 급여합계, 부서별 최소급여를 출력
 --부서번호 그룹
 SELECT
-	DEPTNO, ROUND(AVG(SAL),2), SUM(SAL), MIN(SAL)
+	DEPTNO, ROUND(AVG(SAL),2) "AVG_SAL", SUM(SAL), MIN(SAL)
 FROM
 	EMP
 GROUP BY
@@ -347,7 +359,7 @@ GROUP BY
 	DNAME;
 --12. 위의 11번을 수정하여, 부서별 급여평균 최대치, 부서별 급여합의 최대치, 부서별 최소급여의 최대치를 출력
 SELECT
-	MIN(ROUND(AVG(SAL),2)) "MIN_AVGSAL", MAX(SUM(SAL)), MAX(MIN(SAL))
+	MAX(ROUND(AVG(SAL),2)) "MAX_AVGSAL", MAX(SUM(SAL)), MAX(MIN(SAL))
 FROM
 	EMP
 GROUP BY
@@ -378,9 +390,7 @@ SELECT
 FROM
 	EMP
 GROUP BY
-	ROLLUP (TO_CHAR(HIREDATE,'YYYY'))
-ORDER BY
-	YEAR;
+	ROLLUP (TO_CHAR(HIREDATE,'YYYY'));
 --15. 최대급여, 최소급여, 전체급여합, 평균을 출력
 SELECT
 	MAX(SAL), MIN(SAL), SUM(SAL), ROUND(AVG(SAL),2) "AVG_SAL"
