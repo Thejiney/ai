@@ -1,0 +1,9 @@
+트랜젝션
+데이터 처리의 한단위, All-OR-Nothing 방식으로 처리
+트랜젝션 명령어 종류
+COMMIT (반영) 
+DML 작업을 데이터베이스에 반영
+ROLLBACK(취소)
+DML 작업을 데이터 반영하지 않고 취소
+SAVEPOINT(분할)
+DML 작업에 중간 지점을 설정하여 ROLLBACK TO SAVEPOINT 등을 활용하여 작업을 분할 할수 있음

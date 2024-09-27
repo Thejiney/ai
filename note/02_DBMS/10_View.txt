@@ -1,0 +1,17 @@
+View
+단순뷰, 복합뷰(DML구문을 제한적으로 사용가능)
+
+INLINE-VIEW 
+FROM절의 서브쿼리를 INLINE-VIEW라 하며, FROM절에 오는 서브쿼리는 VIEW 작용
+
+TOP-N구문 (ROWNUM과 INLINE-VIEW를 활용)
+SELECT *
+FROM (
+	SELECT ROWNUM RN, A.*
+	FROM (
+		SELECT *
+		FROM 테이블
+		ORDER BY 필드
+	) A
+)
+WHERE RN BETWEEN X AND Y;
