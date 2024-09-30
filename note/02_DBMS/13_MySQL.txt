@@ -1,0 +1,22 @@
+기본적으로 ORACLE과 문법이 비슷하다.
+
+-- DCL(계정생성, 권한부여, 권한박탈)
+-- DDL(제약조건FK, 시퀀스 없음)
+-- DML(outer join, and=&&, or=||, 일부단일행함수, rownum이 없어 TOP-N 구문이 다름
+
+위와 같은 부분이 ORACLE과 문법이 다름
+--DCL
+create user user01 identified by 'password'; -- 계정 생성
+grant all on *.* to user01; -- 권한부여
+revoke all on *.* from user01; -- 권한 박탈
+
+--DDL
+numeric(4)
+mCode int primary key auto_increment, -- 자동 증가되는 pk(int형)
+foreign key(mcode) references major(mCode) -- 외래키 제약조건은 꼭 아래에
+
+--DML
+-- 학번, 이름, 학과번호, 학과명, 학과사무실(학생이 없는 학과도 출력) -outer join
+select sNo, sname, s.mcode, mname, moffice
+from student s right outer join major m
+on s.mcode=m.mcode;
