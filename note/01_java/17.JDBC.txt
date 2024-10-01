@@ -1,0 +1,8 @@
+JDBC프로그래밍 단계
+1. JDBC 드라이버 로드 (jdk 17 이상 생략가능)
+2. 데이터 베이스 연결(Connection)
+3. statement 생성 (SQL 수행 객체 생성)
+4. SQL문 전송(statement(sql))
+5. 결과받기(resultset=statement(sql))
+6. 결과를 통해 원하는 로직 수행(resultset.next())
+7. 연결 해제
