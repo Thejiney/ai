@@ -51,7 +51,6 @@ VALUES(p_SEQ.NEXTVAL, '배수지', (
 		FROM JOB
 		WHERE JNAME='가수'
 	), 20, 90, 90);
-	
 --2 직업명 입력, 직업별 조회 후 총점추가 총점이 높은 순으로 이름(번호) 출력
 SELECT ROWNUM||'등' "RANK", A.* 
 FROM (

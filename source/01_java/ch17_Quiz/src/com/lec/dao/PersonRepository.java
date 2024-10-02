@@ -84,6 +84,7 @@ public class PersonRepository {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, jname);
 			rs = pstmt.executeQuery();
+
 			while (rs.next()) {
 				String rank = rs.getString("rank");
 				String pname = rs.getString("pname");
@@ -92,6 +93,7 @@ public class PersonRepository {
 				int eng = rs.getInt("eng");
 				int mat = rs.getInt("mat");
 				int tot = rs.getInt("tot");
+
 				persons.add(new Person(rank, pname, jname, kor, eng, mat, tot));
 			}
 		} catch (SQLException e) {

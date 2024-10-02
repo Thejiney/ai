@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.lec.dto.Job;
-
 public class JobRepository {
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	public static JobRepository INSTANCE;
@@ -21,8 +19,8 @@ public class JobRepository {
 	}
 
 //	--직업리스트
-	public ArrayList<Job> jnameList() {
-		ArrayList<Job> jobs = new ArrayList<Job>();
+	public ArrayList<String> jnameList() {
+		ArrayList<String> jobs = new ArrayList<String>();
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -33,9 +31,8 @@ public class JobRepository {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				int jno = rs.getInt("jno");
 				String jname = rs.getString("jname");
-				jobs.add(new Job(jno, jname));
+				jobs.add(jname);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
