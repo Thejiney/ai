@@ -47,7 +47,9 @@ public class Ex2_InsertDeptConfirm {
 			System.out.println(e.getMessage());
 		} finally {
 			try {
+				sc.close();
 				if (rs != null)
+					rs.close();
 				if (pstmt != null)
 					pstmt.close();
 				if (conn != null)

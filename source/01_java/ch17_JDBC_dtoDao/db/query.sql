@@ -2,19 +2,19 @@
 -- (1) 부서 정보들 가져오는 함수 : getDeptList
 SELECT * FROM DEPT;
 
--- (2) deptno로 부서정보 가져오는 함수 : getDept
+-- (2) deptno로 부서정보 가져오는 함수 : getDept(10)
 SELECT *
 FROM DEPT
 WHERE DEPTNO = 10;
 
--- (3) dname으로 부서정보 가져오는 함수 : getDept
+-- (3) dname으로 부서정보 가져오는 함수 : getDept("sales"
 SELECT *
 FROM DEPT
-WHERE DNAME = 'SALES';
+WHERE DNAME = upper('SALES');
 
 -- (4) 부서정보 입력받아 dept에 insert하는 함수 : insertDept
 INSERT INTO DEPT (DEPTNO, DNAME, LOC)
-VALUES(80,'IT','서울');
+VALUES(80,upper('IT'),upper('seoul'));
 
 -- (5) 부서정보 입력받아	dept에 update하는 함수 : updateDept
 UPDATE DEPT

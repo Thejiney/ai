@@ -4,6 +4,6 @@
 /**
  * 
  */
-module ch17_JDBC_dtoDao {
+module ch17_Quiz {
 	requires java.sql;
 }
