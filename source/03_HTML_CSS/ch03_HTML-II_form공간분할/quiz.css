@@ -1,0 +1,16 @@
+b{
+    color:red;
+}
+body{
+    width:500px;
+    margin:0px auto;
+    text-align:center;
+}
+fieldset {
+    text-align:start;
+    width: 500px;
+    margin: 0px;
+}
+td{
+    text-align:center;
+}

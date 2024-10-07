@@ -1,0 +1,5 @@
+입력 양식 태그 <form>
+속성
+action(입력 데이터의 전달 위치), method(입력 데이터의 전달 방식) button(버튼 생성), checkbox(체크박스 생성),
+file(파일 입력 양식 생성,) hidden(보이지 않게), image(이미지 형태를 생성), password(비밀번호 입력 양식),
+radio(라디오 버튼 생성), reset(초기화 버튼 생성), submit(제출버튼 생성), text(글자 입력 양식 생성)
