@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap {
+            width: 750px;
+            margin: 0 auto;
+        }
+
+        #header {
+            text-align: center;
+            border-bottom: 1px solid lightgray;
+        }
+
+        #content {
+            padding: 0 10px;
+            text-align: justify; /*혼합정렬*/
+            border-bottom: 1px solid lightgray;
+        }
+
+            #content p:nth-child(2):first-line,
+            #content p:nth-child(3):first-line { /*문자선택자(첫번째행)*/
+                color: blue;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            #content p:nth-child(2):first-letter,
+            #content p:nth-child(3):first-letter {
+                font-size: 2em; /*원래 크기의 2배*/
+            }
+
+            #content p:nth-child(2)::selection {
+                background-color: violet;
+                color: yellow;
+            }
+
+        #footer ul {
+            overflow: hidden;
+        }
+
+            #footer ul li {
+                float: left;
+                list-style: none;
+            }
+
+                #footer ul li:first-child {
+                    margin: 20px 10px 20px 20px;
+                }
+
+                #footer ul li:last-child {
+                    margin : 10px 20px 20px 10px;
+                }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>제목이나 회사명</h1>
+        </div>
+        <div id="content">
+            <p>오전에 서쪽 오후에는 강원 경상내륙 많은 비 예상</p>
+            <p>
+                원장은 국회의 동의를 얻어 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다.
+                대법원장은 국회의 동의를 얻어 대통령이 임명한다.
+                재의의 요구가 있을 때에는 국회는 재의에 붙이고,
+                재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다.
+            </p>
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
+                model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
+                Various versions have evolved over the years, sometimes by accident, sometimes on purpose
+                (injected humour and the like).
+            </p>
+        </div>
+        <div id="footer">
+            <ul>
+                <li><img src="ch04/logo.png" alt="회사로고"/></li>
+                <li><img src="ch04/address.png" alt="회사정보" /></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        #wrap{
+            width:1000px;
+            margin:5px auto;
+        }
+        #header, #content, #footer {
+            width: 1000px;
+            overflow: hidden;
+        }
+
+        .left, .center, .right {
+            float: left;
+            background-color: lightgray;
+            border: 1px solid gray;
+            width: 150px;
+            height: 150px;
+        }
+
+        .center {
+            width: 693px;
+        }
+
+        #content > div {
+            height: 300px;
+        }
+
+        #content > .right {
+            border-radius: 30px 0 0 30px;
+        }
+
+        #header > .left, #footer > .right {
+            border-radius: 30px 0 30px 0;
+        }
+
+        #header > .center {
+            border-radius: 0 0 30px 30px;
+        }
+
+        #header > .right, #footer > .left {
+            border-radius: 0 30px 0 30px;
+        }
+
+        #content > .left {
+            border-radius: 0 30px 30px 0;
+        }
+
+        #footer > .center {
+            border-radius: 30px 30px 0 0;
+        }
+
+        #content > .center {
+            border-radius: 30px 30px 30px 30px;
+        }
+
+        #content .center li {
+            list-style: none;
+        }
+
+        #content .center .wrap {
+            overflow: hidden;
+        }
+
+            #content .center .wrap li {
+                float: left;
+                width: 33%;
+                text-align:center;
+            }
+
+                #content .center .wrap li a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+
+        #content .center > ul li {
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        #content .center > p {
+            font-size: 18px;
+            padding: 30px 10px;
+        }
+
+        #content > .right > ol {
+            font-size: 15px;
+            padding: 20px 30px;
+        }
+
+            #content > .right > ol > li:nth-last-child(-n+3) {
+                color: lightcoral;
+            }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+        <div id="content">
+            <div class="left"></div>
+            <div class="center">
+                <div class="wrap">
+                    <ul>
+                        <li><a href="#1">menu1</a></li>
+                        <li><a href="#2">menu2</a></li>
+                        <li><a href="#3">menu3</a></li>
+                    </ul>
+                </div>
+                <ul>
+                    <li>AI 개발자 양성과정</li>
+                </ul>
+                <p>
+                    그들의 위하여서, 들어 인생을 사막이다. 커다란 대고, 타오르고 무엇을 못하다 트고, 풍부하게 그리하였는가? 보내는 힘자게 간에 위하여 넣는 것이다.
+                </p>
+            </div>
+            <div class="right">
+                <ol>
+                    <li>태그</li>
+                    <li>전체(*)</li>
+                    <li>id, class</li>
+                    <li>속성</li>
+                    <li>후손, 자손(>)</li>
+                    <li>동위</li>
+                    <li>반응</li>
+                    <li>상태</li>
+                    <li>구조</li>
+                    <li>문자</li>
+                    <li>링크</li>
+                    <li>부정</li>
+                </ol>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+</body>
+</html>
