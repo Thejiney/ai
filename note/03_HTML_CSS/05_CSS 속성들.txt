@@ -1,0 +1,16 @@
+1. CSS3 단위들: em, %, px, pt
+2. url()함수를 이용한 background-image, 로컬 폰트 지정
+3. display : inline, block, inline-block, none
+4. visibility : 보이지만 않게 됨. 지정 공간은 유지
+5. opacity : 투명도 조정
+6. margin과 padding
+7. boxing-sizing : border를 box안으로
+8. border
+9. 글자관련 속성 : font-family(글꼴), font-size(크기), font-weight(두께), font-style(기울임등등),
+		line-height(행간간격), text-align(정렬), text-decration(밑줄,취소선등)
+10. 폰트(웹폰트, 로컬폰트, 시스템 폰트)
+	웹폰트 => 웹에서 Url을 통하여 폰트 참조
+	로컬폰트 => 같은 프로젝트내에 폰트 파일 포함
+	시스템 폰트 => 기본적으로 시스템에 설치된 폰트 사용
+11.position
+12.float
