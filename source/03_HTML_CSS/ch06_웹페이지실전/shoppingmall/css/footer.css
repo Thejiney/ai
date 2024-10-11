@@ -1,0 +1,22 @@
+/*footer.css*/
+footer{
+    overflow:hidden;
+    width:1000px;
+    margin: 0 auto;
+}
+    footer div:not(.copyright) {
+        float: left;
+        width: 33.33%;
+        border: 1px solid gray;
+        box-sizing: border-box;
+        height: 80px;
+    }
+
+footer .copyright{
+    clear:both;
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 20px;
+    text-align:center;
+}

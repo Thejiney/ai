@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+label {
+    display: block;
+}
+
+#contain {
+    width: 1010px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 5px;
+}
+/* * * * * nav 배치 * * * * */
+nav {
+    width: 1000px;
+    overflow: hidden;
+}
+
+    /* * * * * nav left와 right 한라인에 배치 * * * * */
+    nav #nav_left {
+        width: 600px;
+        float: left;
+    }
+
+    nav #nav_right {
+        width: 300px;
+        float: right;
+    }
+
+    /* * * * * nav left내 메뉴 가로배치 * * * * */
+    nav #nav_left ul {
+        overflow: hidden;
+    }
+
+        nav #nav_left ul li {
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            list-style: none;
+            width: 90px;
+            margin: 0 20px;
+            text-align: center;
+        }
+
+            /* * * * * nav left내 로고 색설정 * * * * */
+            nav #nav_left ul li:first-child {
+                border: 1px solid black;
+                box-sizing: border-box;
+                background-color: bisque;
+            }
+
+    /* * * * * nav right내 메뉴 가로 배치 * * * * */
+    nav #nav_right ul {
+        overflow: hidden;
+    }
+
+        nav #nav_right ul li {
+            height: 20px;
+            line-height: 20px;
+            float: right;
+            list-style: none;
+            width: 80px;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+/* * * * * content 설정 * * * * */
+#content {
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+    /* * * * * content title 위치 및 밑줄 * * * * */
+    #content #title {
+        padding: 10px;
+        border-bottom: 1px solid gray;
+        box-sizing: border-box;
+    }
+
+    /* * * * * content lnb 와 my content 가로배치 * * * * */
+    #content #lnb {
+        float: left;
+        margin: 10px;
+        width: 200px;
+    }
+
+
+  
+    #content #my_content {
+        float: left;
+        width: 760px;
+        margin: 10px;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+    /* * * * * content lnb 메뉴 배치 및 메뉴 강조* * * * */
+    #content #lnb ul li {
+        list-style: none;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+
+        #content #lnb ul li:nth-child(4) {
+            background-color: bisque;
+            font-weight: bold;
+        }
+
+        #content #lnb ul li a {
+            padding: 5px 30px;
+        }
+
+            #content #lnb ul li a:nth-child(4) {
+                background-color: bisque;
+            }
+
+    /* * * * * my_content 내 서브 타이틀 배치 및 구분선 * * * * */
+    #content #my_content #sub_title {
+        border-bottom: 1px solid black;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    /* * * * * my_content 내 테이블과 폼 배치 * * * * */
+    #content #my_content #modify {
+        height: 400px;
+    }
+
+        #content #my_content #modify form table {
+            margin: 40px auto;
+        }
+
+            #content #my_content #modify form table tr {
+                height: 20px;
+            }
+
+                #content #my_content #modify form table tr td:first-child {
+                    width: 200px;
+                }
+
+                #content #my_content #modify form table tr td:last-child input {
+                    width: 300px;
+                }
+
+                #content #my_content #modify form table tr td:last-child #wrap {
+                    width: 50px;
+                    margin: 0 auto;
+                }
+
+                    #content #my_content #modify form table tr td:last-child #wrap #submit {
+                        width: 50px;
+                    }
+
+/* * * * * footer * * * * */
+footer {
+    background-color: bisque;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center
+}

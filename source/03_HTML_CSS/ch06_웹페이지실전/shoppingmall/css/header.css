@@ -1,0 +1,114 @@
+/* header.css */
+/* * * * * 페이지 초기화 * * * * */
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../font/Roboto-Regular.ttf'); /*css파일 기준으로*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto-Regular, Consolas;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+/* * * * * header .gnb * * * * */
+header .gnb {
+    /*width: 100%;*/
+    background-color: black;
+}
+
+    header .gnb ul {
+        width: 1000px;
+        margin: 0 auto;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+    }
+
+        header .gnb ul li {
+            float: left;
+            width: 80px;
+            margin: 0 10px;
+            text-align: center;
+            /* border: 1px solid yellow;
+            box-sizing: border-box; 배치 확인용 */
+        }
+
+            header .gnb ul li a {
+                color: white;
+            }
+
+/* * * * * header .logo * * * * */
+header .logo {
+    font-family: "Pacifico", cursive;
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 30px auto;
+    font-size: 2em;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+/* * * * * header .hitmenu * * * * */
+header .hitmenu ul {
+    width: 1000px;
+    margin: 3px auto;
+    overflow: hidden;
+}
+
+    header .hitmenu ul li {
+        float: right;
+        border: 1px solid gray;
+        box-sizing: border-box;
+        font-size: 1.5em;
+    }
+
+        header .hitmenu ul li a {
+            padding: 10px 30px;
+        }
+
+        header .hitmenu ul li:first-child {
+            border-radius: 0 15px 15px 0;
+        }
+
+        header .hitmenu ul li:last-child {
+            border-radius: 15px 0 0 15px;
+        }
+
+/* * * * * header .lnb * * * * */
+header .lnb {
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+}
+
+    header .lnb ul {
+        overflow: hidden;
+        height: 30px;
+        line-height: 30px;
+        width: 1000px;
+        margin: 0 auto;
+/*        border: 1px solid red;
+        box-sizing: border-box;*/
+    }
+
+        header .lnb ul li {
+            float: left;
+            width: 125px;
+            margin: 0 0px;
+            text-align: center;
+            font-weight: bold;
+/*            border: 1px solid yellow;
+            box-sizing: border-box;*/
+        }
