@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+
+    #top_bar {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      background-color: #FFD800;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    #top_bar ul {
+      overflow: hidden;
+    }
+
+    #top_bar ul li {
+      float: left;
+      width: 16.66%;
+      border-right: 1px dotted gray;
+      box-sizing: border-box;
+      font-size: 1.5em;
+    }
+
+    /* * * * * #left_bar * * * * */
+    #left_bar {
+      width: 200px;
+      text-align: center;
+      background-color: saddlebrown;
+      position: fixed;
+      left: 0;
+      top: 100px;
+      bottom: 100px;
+    }
+
+    #left_bar ul li a {
+      display: block;
+      padding: 10px;
+      border-bottom: 1px solid gray;
+    }
+
+    /* * * * * #right_bar * * * * */
+    #right_bar {
+      width: 200px;
+      text-align: center;
+      background-color: lightyellow;
+      position: fixed;
+      right: 0;
+      top: 100px;
+      bottom: 100px;
+    }
+
+    #right_bar img {
+      width: 120px;
+    }
+
+    /* * * * * #bottom_bar * * * * */
+    #bottom_bar {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      position: fixed;
+      background-color: lightyellow;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+
+    /* * * * * #content * * * * */
+    #content {
+      padding: 110px 210px 110px 210px;
+      text-align: justify;
+    }
+
+    #content img {
+      float: left;
+      margin-right: 10px;
+    }
+  </style>
+  <script></script>
+</head>
+
+<body>
+  <div id="top_bar">
+    <ul>
+      <li><a href="#m">GNB1</a></li>
+      <!--SHIFT+ALT+화살표키:한줄복사-->
+      <li><a href="#m">GNB2</a></li>
+      <li><a href="#m">GNB3</a></li>
+      <li><a href="#m">GNB4</a></li>
+      <li><a href="#m">GNB5</a></li>
+      <li><a href="#m">GNB6</a></li>
+    </ul>
+  </div>
+  <div id="left_bar">
+    <ul>
+      <li><a href="#m">LNB_01</a></li>
+      <li><a href="#m">LNB_02</a></li>
+      <li><a href="#m">LNB_03</a></li>
+      <li><a href="#m">LNB_04</a></li>
+      <li><a href="#m">LNB_05</a></li>
+      <li><a href="#m">LNB_06</a></li>
+      <li><a href="#m">LNB_07</a></li>
+      <li><a href="#m">LNB_08</a></li>
+      <li><a href="#m">LNB_09</a></li>
+      <li><a href="#m">LNB_10</a></li>
+    </ul>
+  </div>
+  <div id="right_bar">
+    <ul>
+      <li>
+        <a href="http://www.daum.net">
+          <img src="https://cdn.iconscout.com/icon/free/png-256/free-daum-285192.png?f=webp" alt="다음" />
+        </a>
+      </li>
+      <li>
+        <a href="http://www.google.com">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968863.png" alt="구글" />
+        </a>
+      </li>
+      <li>
+        <a href="http://www.daum.net">
+          <img src="https://cdn.iconscout.com/icon/free/png-256/free-daum-285192.png?f=webp" alt="다음" />
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="bottom_bar">
+    <p>Copyright ⓒ Joeun System Corp. ALL RIGHT RESERVED</p>
+  </div>
+  <div id="content">
+    <img src="100img.png" alt="더미 이미지" />
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor
+      orci scelerisque venenatis efficitur. Suspendisse sed ipsum est.
+      Phasellus eget eros at odio facilisis pretium. In vulputate justo sed
+      urna cursus tincidunt. Phasellus bibendum enim ullamcorper ex vehicula
+      tristique. Duis vestibulum egestas orci ut consequat. Nulla sit amet
+      sapien id tellus ultrices pharetra sit amet vel lectus. Etiam dapibus
+      maximus justo, vitae viverra arcu bibendum ac. Fusce porta purus purus,
+      ac viverra arcu cursus quis. Nullam suscipit urna ut ante tincidunt
+      tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+      Sed aliquam metus vitae ex commodo pretium. Etiam scelerisque et neque a
+      consequat. Duis id felis vestibulum, vehicula turpis eu, dignissim urna.
+      Quisque vel risus a dui fringilla vestibulum. Sed semper at diam in
+      pharetra. Proin euismod rhoncus metus, sit amet lacinia elit porta vel.
+      Mauris et turpis porta dui tempus elementum. Nullam diam mi, dapibus
+      eget venenatis id, molestie a urna. Nam tristique leo in tempus tempor.
+      Maecenas ultrices lorem quis rhoncus egestas. Ut ac ligula sagittis,
+      vestibulum dui quis, hendrerit leo. Nam hendrerit feugiat mi, quis
+      sagittis elit consectetur eget. In convallis nunc enim. Aliquam ante
+      nunc, scelerisque a eros nec, sollicitudin condimentum ante. Mauris
+      interdum ultrices lacinia. Curabitur vitae laoreet odio, non mattis
+      magna. Maecenas hendrerit at sapien vel auctor. Nullam sed risus porta,
+      mattis dui imperdiet, tempor arcu. Nullam ultricies fringilla nunc, quis
+      malesuada diam semper vitae. Phasellus ac quam pulvinar, imperdiet dolor
+      sit amet, convallis mi. Aliquam vel sem sagittis, vestibulum tortor a,
+      semper lacus. Phasellus venenatis enim eu turpis suscipit, ut mollis
+      purus porta. Sed quis tincidunt est, id vehicula quam. Nulla vehicula
+      velit id velit aliquet lacinia. Sed ante odio, volutpat vel aliquam et,
+      vehicula non felis. Maecenas tristique eget diam vitae hendrerit.
+      Praesent ullamcorper, nulla quis accumsan malesuada, nunc nunc vulputate
+      nulla, vel dictum nunc velit ut elit. Nunc tristique quis odio vitae
+      tempor. Fusce dapibus leo volutpat condimentum mollis. Donec non ex
+      finibus, faucibus odio eget, blandit purus. Fusce fringilla mauris
+      efficitur quam dapibus cursus. Sed non magna eu metus convallis
+      eleifend. Pellentesque luctus leo quis lacus bibendum, eget ullamcorper
+      justo blandit. Curabitur a commodo arcu. Pellentesque eget neque
+      porttitor ante suscipit tempor vel id neque. Pellentesque habitant morbi
+      tristique senectus et netus et malesuada fames ac turpis egestas. Nam
+      justo lorem, venenatis non mi sed, volutpat consectetur arcu. Phasellus
+      finibus dignissim augue, a rutrum mi ornare non. Nam ut volutpat lectus.
+      Curabitur sed finibus odio. Praesent at tristique ligula. Lorem ipsum
+      dolor sit amet, consectetur adipiscing elit. Proin sit amet metus nec
+      lacus euismod dictum. Curabitur a posuere dui. Sed vestibulum felis
+      ultricies, luctus odio nec, hendrerit lectus.
+    </p>
+  </div>
+</body>
+
+</html>

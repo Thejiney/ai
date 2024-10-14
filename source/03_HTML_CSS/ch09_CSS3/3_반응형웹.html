@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        /* * * * * 페이지 초기화 * * * * */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+            color: black;
+        }
+
+        /* * * * * 공통부분 * * * * */
+        #wrap {
+            border: 1px solid gray;
+            box-sizing: border-box;
+            text-align: justify;
+        }
+
+        #wrap #header {
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border: 1px solid gray;
+            box-sizing: border-box;
+        }
+
+        #wrap #nav ul {
+            overflow: hidden;
+        }
+
+        #wrap #nav ul li {
+            float: left;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border: 1px solid gray;
+            box-sizing: border-box;
+        }
+
+        /* * * * * pc 레이아웃 * * * * */
+        @media screen and (min-width:1401px) {
+            #wrap {
+                width: 800px;
+                margin: 3px auto;
+            }
+
+            #wrap #nav ul li {
+                width: 20%;
+            }
+        }
+
+        /* * * * * 탭 레이아웃 * * * * */
+        @media screen and (max-width:1400px) and (min-width:960px) {
+            #wrap {
+                width: 99%;
+                margin: 0 auto;
+                background-color: lightblue;
+                font-size: 1.1em;
+            }
+
+            #wrap #nav ul li {
+                width: 25%;
+            }
+
+            #wrap #nav ul li:nth-child(2) {
+                display: none;
+            }
+
+        }
+
+        /* * * * * 스마트폰 레이아웃 * * * * */
+        @media screen and (max-width:959px) {
+            #wrap {
+                background-color: lightpink;
+                font-size: 1.3em;
+            }
+
+            #wrap #nav ul li {
+                width: 33.33%
+            }
+
+            #wrap #nav ul li:nth-child(1),
+            #wrap #nav ul li:nth-child(3) {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>반응형 웹</h1>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h2>Where does it come from?</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non sapien non turpis pretium dignissim quis
+                in metus. Nulla eget massa ac massa ultrices pulvinar nec nec enim. Nulla tellus urna, cursus sit amet
+                est ac, sagittis ullamcorper orci. Pellentesque enim purus, blandit in felis lobortis, placerat pulvinar
+                est. Donec convallis iaculis nisi at bibendum. Suspendisse neque nulla, semper a eleifend eu, bibendum
+                eget orci. Suspendisse tempor at sem vitae varius. Aenean vestibulum consequat accumsan. Cras porttitor
+                lorem tincidunt tellus sodales, ut interdum augue vehicula.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

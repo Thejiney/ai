@@ -1,0 +1,10 @@
+CSS3규칙
+CSS파일 분리 : CSS파일과 HTML을 분리하여 관리 가능.
+@import 규칙: link를 대체할 수 있음,<style>태그 내부에 위치해야함
+@media 규칙: link 태그에 미디어 속성을 활용하여 상황에 따른 CSS 적용가능
+-all : 모든 미디어, -aural: 음성 합성 장치, braille: 점자 표시장치, print: 인쇄용도
+projection: 프로젝터용도, screen: 컴퓨터 스크린을 위한 용도, tv: 음성과 영상이 동시출력되는 TV와 같은 장치
+embossed:페이지에 인쇄된 점자 표지장치
+
+반응형 웹: 스타일에 조건을 걸어 둠으로써 그에 따른 웹페이지 출력물을 변경가능함
+ex)device-width:(A)

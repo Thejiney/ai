@@ -1,0 +1,7 @@
+Viewport
+<meta>특정한 정보를 나타내기 위한 태그
+이 중 디바이스의 특정정보를 나타내기 위해 뷰포트 meta 태그를 사용
+
+속성
+width, height, inital-scale(초기화면비율), user-scalable(확대축소가능여부),
+minimum-scale(최소비율), maximum-scale(최대비율)

@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+          user-scalable=yes, maximum-scale=2.0, minimum-scale=0.7" />
+    <title></title>
+    <style>
+        /* * * * * 페이지 초기화 * * * * */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+        }
+        /* * * * * header * * * * */
+        header {
+            background-color: #ea8f00;
+        }
+            /* * * * * header의 #logo_wrap * * * * */
+            header #logo_wrap {
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                position: relative; /*자식태그가 부모태그 안에 두기 위한 용도*/
+            }
+
+                header #logo_wrap img.menu {
+                    position: absolute;
+                    top: 0;
+                    left: 10px;
+                }
+
+                header #logo_wrap img.myinfo {
+                    position: absolute;
+                    top: 0;
+                    right: 10px;
+                }
+
+                header #logo_wrap a {
+                    color: white;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                }
+            /* * * * * header의 #search * * * * */
+            header #search {
+                position: relative;
+            }
+
+                header #search input[type='text'] {
+                    width: 100%;
+                    height: 50px;
+                    border: 3px solid #ea8f00;
+                    box-sizing: border-box;
+                    outline: none;
+                    padding: 10px 60px 10px 10px;
+                }
+
+                header #search input[type='submit'] {
+                    background: url('ch07/search.png');
+                    width: 50px;
+                    height: 50px;
+                    border: 0;
+                    outline: 0;
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                }
+        /* * * * * #lnb * * * * */
+        #lnb ul {
+            overflow: hidden;
+            margin: 7px 0; /*위 아래만 밖여백*/
+        }
+
+            #lnb ul li {
+                float: left;
+                width: 16.66%;
+                text-align: center;
+                height: 30px;
+                line-height: 30px;
+                border-right: 1px solid #ea8f00;
+                box-sizing: border-box;
+            }
+
+                #lnb ul li:last-child {
+                    border: none;
+                }
+        /* * * * * #section1 * * * * */
+        section #section1 > div {
+            overflow: hidden;
+        }
+
+            section #section1 > div > div {
+                float: left;
+                width: 50%;
+                height: 120px;
+                border: 2px solid white;
+                box-sizing: border-box;
+            }
+
+        section #section1 img {
+            width: 100%;
+            height: 100%;
+        }
+        /* * * * * #section2 * * * * */
+        section #section2 {
+            margin: 7px 0;
+        }
+
+            section #section2 ul li a {
+                border-bottom: 1px solid #cccccc;
+                box-sizing: border-box;
+                padding: 7px;
+                /* 말줄임태그 (한줄 이상의 데이터에서 한줄만 출력되고 뒷부분엔 ...)*/
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        /* * * * * #section3 * * * * */
+        section #section3 ul li {
+            border: 1px solid gray;
+            box-sizing: border-box;
+            margin: 7px;
+            padding: 10px;
+            position: relative; /*p.img태그를 position 잡을 예정*/
+            height: 120px;
+        }
+
+            section #section3 ul li p.img {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+            }
+
+            section #section3 ul li p.txt {
+                padding-left: 120px;
+            }
+
+        section #section3 p.txt span:first-child {
+            display: block;
+            /*말줄임(ellipsis)태그*/
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: darkblue;
+        }
+        /* * * * * footer * * * * */
+        footer{
+            background-color: #ea8f00;
+            text-align:center; /*글씨와 img를 가운데*/
+        }
+        footer p:last-child{
+            padding: 0 0 10px 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo_wrap">
+            <img class="menu" src="ch07/menu.png" alt="메뉴 아이콘" />
+            <a class="logo" href="ex.html">mobile logo</a>
+            <img class="myinfo" src="ch07/myinfo.png" alt="내정보아이콘" />
+        </div>
+        <div id="search">
+            <form action="#">
+                <input type="text" name="query_word" />
+                <input type="submit" value=""/>
+            </form>
+        </div>
+    </header>
+    <div id="lnb">
+        <ul>
+            <li><a href="#">lnb1</a></li>
+            <li><a href="#">lnb2</a></li>
+            <li><a href="#">lnb3</a></li>
+            <li><a href="#">lnb4</a></li>
+            <li><a href="#">lnb5</a></li>
+            <li><a href="#">lnb6</a></li>
+        </ul>
+    </div>
+    <section>
+        <div id="section1">
+            <div class="row1">
+                <div>
+                    <a href="https://v.daum.net/v/20241011111610795">
+                        <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/11/xportsnews/20241011111612571amlz.jpg"
+                             alt="1행1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.daum.net/v/20241011114703492">
+                        <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/11/starnews/20241011114704571ipkc.jpg"
+                             alt="1행2열" />
+                    </a>
+                </div>
+            </div>
+            <div class="row2">
+                <div>
+                    <a href="https://v.daum.net/v/20241011114703492">
+                        <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/11/starnews/20241011114704571ipkc.jpg"
+                             alt="2행1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.daum.net/v/20241011111610795">
+                        <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/11/xportsnews/20241011111612571amlz.jpg"
+                             alt="2행2열" />
+                    </a>
+                </div>
+            </div>
+            <div class="row3">
+                <div>
+                    <a href="https://v.daum.net/v/20241008125213694">
+                        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/08/THEFACT/20241008125223627iris.jpg"
+                             alt="3행1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.daum.net/v/20240927201203597">
+                        <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202409/27/mksports/20240927201205128zksr.jpg"
+                             alt="3행2열" />
+                    </a>
+                </div>
+            </div>
+        </div><!--#section1-->
+        <div id="section2">
+            <ul>
+                <li>
+                    <a href="https://v.daum.net/v/20241011111610795">
+                        에스파 카리나 '싱그러운 미소'[엑's HD포토]
+                    </a>
+                </li>
+                <li>
+                    <a href="https://v.daum.net/v/20241011111610795">
+                        내용이 짧은 것과 긴 것을 썩어서 놔요. 내용이 길면 말줄임 태그를 사용해서 뒷부분 대신 ...으로 대치할 예정입니다.
+                    </a>
+                </li>
+                <li>
+                    <a href="https://v.daum.net/v/20241011111610795">
+                        에스파 카리나 '싱그러운 미소'[엑's HD포토], 에스파 카리나 '싱그러운 미소'[엑's HD포토], 에스파 카리나 '싱그러운 미소'[엑's HD포토]
+                    </a>
+                </li>
+                <li>
+                    <a href="https://v.daum.net/v/20241011111610795">
+                        에스파 카리나 '싱그러운 미소'[엑's HD포토]
+                    </a>
+                </li>
+            </ul>
+        </div><!--#section2-->
+        <div id="section3">
+            <ul>
+                <li>
+                    <p class="img"><img src="ch07/100img.png" /></p>
+                    <p class="txt">
+                        <span>첫번째 span 내용은 말줄임을 할 예정입니다. block타입으로 전환할 예정입니다</span>
+                        <span>두번째 span 내용은 말줄임 안 할 예정입니다. 한줄 이상의 내용은 다음줄로.</span>
+                    </p>
+                </li>
+                <li>
+                    <p class="img"><img src="ch07/100img.png" /></p>
+                    <p class="txt">
+                        <span>첫번째 span 내용은 말줄임을 할 예정입니다. block타입으로 전환할 예정입니다</span>
+                        <span>두번째 span 내용은 말줄임 안 할 예정입니다. 한줄 이상의 내용은 다음줄로.</span>
+                    </p>
+                </li>
+            </ul>
+        </div><!--#section3-->
+    </section>
+    <footer>
+        <p><img src="ch07/logo.png" alt="회사로고" /></p>
+        <p>서울시 땡땡구 뭐뭐로 12, 2F(아무동, xx빌딩)</p>
+    </footer>
+</body>
+</html>
