@@ -1,0 +1,5 @@
+if문
+switch문
+삼항연산자
+내장객체(document, Date, Math)
+==, ===(값과 자료형 비교)
