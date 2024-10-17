@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+        body {
+            background-image: url(ch05_img/img01.png);
+            background-size: 100%;
+        }
+    </style>
+    <script>
+        var sec = 0;
+        img = ['url(ch05_img/img01.png)', 'url(ch05_img/img02.png)', 'url(ch05_img/img03.png)'];
+        col = ['#FFFF00', '#000000', '#FF00FF'];
+        //1초마다 수행할 스크립트작성
+        var id = setInterval(() => {
+            sec++;
+            document.body.style.backgroundImage = img[sec % img.length];
+            document.body.style.color = col[sec % col.length];
+            document.body.innerHTML = '<h2>' + new Date() + '</h2>';
+        }, 1000);
+
+        //스크립트 실행이후 10초 뒤 setInterval 삭제;
+        setTimeout(() => {
+            clearInterval(id);
+            document.body.innerHTML+= sec + '초 지나서 중지함'
+        }, 10 * 1000);
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
