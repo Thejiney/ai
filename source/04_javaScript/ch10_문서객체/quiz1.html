@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <style>
+    table {
+      width: 280px;
+      height: 100px;
+      margin: 10px auto;
+    }
+
+    h3 {
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    color = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'pink', 'white'];
+    window.onload = () => {
+      tds = document.querySelectorAll('td');
+      for (idx = 0; idx < tds.length; idx++) {
+        tds[idx].style.backgroundColor = color[idx];
+      }
+    }
+    const changeColor = (idx) => {
+      document.body.style.backgroundColor = color[idx];
+    }
+  </script>
+</head>
+
+<body>
+  <table>
+    <tr onmouseout="changeColor(7)">
+      <td onmouseover="changeColor(0)"></td>
+      <td onmouseover="changeColor(1)"></td>
+      <td onmouseover="changeColor(2)"></td>
+      <td onmouseover="changeColor(3)"></td>
+      <td onmouseover="changeColor(4)"></td>
+      <td onmouseover="changeColor(5)"></td>
+      <td onmouseover="changeColor(6)"></td>
+    </tr>
+  </table>
+</body>
+
+</html>

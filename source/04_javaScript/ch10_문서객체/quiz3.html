@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <style>
+    table {
+      width: 280px;
+      height: 100px;
+      margin: 10px auto;
+    }
+
+    h3 {
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    color = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'pink'];
+    window.onload = () => {
+      tds = document.querySelectorAll('td');
+      for (idx = 0; idx < tds.length; idx++) {
+        tds[idx].style.backgroundColor = color[idx];
+      }
+    }
+    const overAct = (idx) => {
+      document.body.style.backgroundColor = 'black';
+      var h3 = document.createElement('h3');
+      var textNode = document.createTextNode('야호 거의 끝났다');
+      document.body.appendChild(h3);
+      h3.appendChild(textNode);
+      tr = document.querySelector('tr');
+      h3.style.color = color[idx];
+    }
+
+    const outAct = () => {
+      h3 = document.querySelector('h3');
+      document.body.removeChild(h3);
+      document.body.style.backgroundColor = 'white';
+    }
+  </script>
+</head>
+
+<body>
+  <table>
+    <tr onmouseout="outAct()">
+      <td onmouseover="overAct(0)"></td>
+      <td onmouseover="overAct(1)"></td>
+      <td onmouseover="overAct(2)"></td>
+      <td onmouseover="overAct(3)"></td>
+      <td onmouseover="overAct(4)"></td>
+      <td onmouseover="overAct(5)"></td>
+      <td onmouseover="overAct(6)"></td>
+    </tr>
+  </table>
+</body>
+
+</html>

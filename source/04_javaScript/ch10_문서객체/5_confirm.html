@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <style>
+    p {
+      text-align: center;
+    }
+  </style>
+  <script>
+    var openerId; // join페이지에서의 id를 입력받는 input 태그
+    var confirmId;  // confirm페이지의 id를 입력받는 input 태그
+    window.onload = () => {
+      openerId = opener.document.getElementById('id');
+      checkId = document.querySelector('input[type="text"]');
+      confirmed = opener.document.getElementById('confirmed');
+      checkId.value = openerId.value;
+    }
+    function confirmOk() {
+      openerId.value = checkId.value;
+      opener.document.getElementById('confirmed').value = 1;
+      close();
+    }
+  </script>
+</head>
+
+<body>
+  <p>
+    아이디
+    <input type="text" name="id">
+    <button>체크</button>
+  </p>
+  <p>
+    <button onclick="confirmOk()">아이디사용</button>
+  </p>
+  </form>
+</body>
+
+</html>
