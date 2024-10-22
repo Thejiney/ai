@@ -1,0 +1,11 @@
+넓은 의미 : HTML 페이지를 인식하는 방식
+좁은 의미 : document객체와 관련된 객체의 집합
+
+html
+  - head
+    - title : "index"
+  - body
+    - h1 : "text node"
+    - img
+
+간단한 html을 이와 같이 트리 모양의 문서 객체 모델로 나타낼 수 있으며 각 요소를 노드라고 칭함

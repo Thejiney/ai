@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <script>
+    window.onload = () => {
+      imgs = document.querySelectorAll('img');
+      imgs.forEach((img, idx) => {
+        imgs[idx].src = 'ch11_img/' + idx + 'out.jpg';
+                
+        imgs[idx].onmouseover = function () {
+          this.src = 'ch11_img/' + idx + 'over.jpg';
+        };
+        imgs[idx].onmouseout = function () {
+          this.src = 'ch11_img/' + idx + 'out.jpg';
+        };
+      });
+    };
+  </script>
+</head>
+
+<body>
+  <img>
+  <img>
+  <img>
+  <img>
+</body>
+
+</html>

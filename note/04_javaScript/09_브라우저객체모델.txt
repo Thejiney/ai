@@ -1,0 +1,8 @@
+window 객체
+  - location 객체	주소와 관련된 객체
+  - navigator 객체	웹 브라우저와 관련된 객체
+  - history 객체	기록과 관련된 객체
+  - screen 객체	화면 전체와 관련된 객체
+  - document 객체	HTML 문서와 관련된 객체
+
+각 객체의 세부 속성과 메소드는 lecNote참조
