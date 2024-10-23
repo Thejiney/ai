@@ -1,0 +1,11 @@
+1. 클라이언트에서 Was로 요청하는 방식 : get, post
+2. get 방식 : url값으로 정보가 전송되어 보안에 약함
+3. post 방식 : header를 이용해 정보가 전송되어 보안에 강함
+4. 파라미터 값을 전달 받을 때에 배열로 전달받을 수 있음 ex)multiple
+5. 컨텍스트 패스(Context Path) : WAS에서 웹어플리케이션을 구분하기 위한 path(해당 웹 어플리케이션이 이름)
+6. Servlet 작동순서 : 웹브라우저 → [웹서버] → [웹어플리케이션서버] → [Servlet 컨테이너 servlet객체생성]
+7. Servlet 라이프 사이클
+①실행 시기 : Servlet 객체 생성(최초 한번)
+②최초요청, 컨테이너 시작 ; init() 호출(최초 한번)
+③모든 요청과 응답 ; service(), doGet(), doPost() 호출(요청시 매번, service없으면 doGet이나 doPost 실행. 통상적으로 doGet과 doPost를 둔다)
+④컨테이너 종료/어플리케이션종료 ; destroy() 호출(마지막한번 자원해제 : Servlet수정, 서버재가동 등)
