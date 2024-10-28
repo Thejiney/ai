@@ -1,6 +1,7 @@
 package com.lec.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -45,7 +46,6 @@ public class DeptRepository {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String query = "SELECT DEPTNO, DNAME FROM DEPT";
-
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(query);
@@ -55,7 +55,7 @@ public class DeptRepository {
 				String dname = rs.getString("dname");
 				dtos.add(new Dept(deptno, dname));
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		} finally {
 			try {

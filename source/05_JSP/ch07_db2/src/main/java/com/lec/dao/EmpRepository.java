@@ -3,13 +3,14 @@ package com.lec.dao;
 import java.sql.*;
 import java.util.ArrayList;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import com.lec.dto.Emp;
 
 public class EmpRepository {
-	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
-	private String uid = "scott";
-	private String upw = "tiger";
 	private static EmpRepository INSTANCE = new EmpRepository();
 
 	public static EmpRepository getInstance() {
@@ -17,11 +18,18 @@ public class EmpRepository {
 	}
 
 	public EmpRepository() {
+	}
+
+	private Connection getConnection() throws SQLException {
+		Connection conn = null;
 		try {
-			Class.forName(driver);
-		} catch (Exception e) {
+			Context ctx = new InitialContext();
+			DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/Oracle11g");
+			conn = ds.getConnection();
+		} catch (NamingException e) {
 			System.out.println(e.getMessage());
 		}
+		return conn;
 	}
 
 	public ArrayList<Emp> empList() {
@@ -31,7 +39,7 @@ public class EmpRepository {
 		ResultSet rs = null;
 		String query = "SELECT * FROM EMP";
 		try {
-			conn = DriverManager.getConnection(url, uid, upw);
+			conn = getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(query);
 			while (rs.next()) {
@@ -71,7 +79,7 @@ public class EmpRepository {
 		String query = "SELECT E.*, DNAME\r\n" + "	FROM EMP E, DEPT D\r\n"
 				+ "	WHERE E.DEPTNO=D.DEPTNO AND E.DEPTNO LIKE '%'||?";
 		try {
-			conn = DriverManager.getConnection(url, uid, upw);
+			conn = getConnection();
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, deptnoStr);
 			rs = pstmt.executeQuery();
@@ -117,7 +125,7 @@ public class EmpRepository {
 				+ "		AND E.DEPTNO=D.DEPTNO";
 		//@formatter:on
 		try {
-			conn = DriverManager.getConnection(url, uid, upw);
+			conn = getConnection();
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, schName);
 			rs = pstmt.executeQuery();
