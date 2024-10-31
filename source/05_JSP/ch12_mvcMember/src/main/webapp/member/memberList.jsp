@@ -11,6 +11,31 @@
 <link href="${conPath}/css/ex.css" rel="stylesheet">
 </head>
 <body>
+	<c:if test="${not empty insertMsg }">
+		<script>
+			alert('2방법. ${insertMsg}');
+		</script>
+	</c:if>
+	<c:if test="${not empty memberExistentMsg }">
+		<script>
+			alert('${memberExistentMsg}');
+			//history.back();
+			history.go(-1);
+		</script>
+	</c:if>
+
+	<c:set var="SUCCESS" value="1" />
+	<c:set var="FAIL" value="0" />
+	<c:if test='${insertResult eq SUCCESS }'>
+		<script>
+			alert('1방법. 가입성공');
+		</script>
+	</c:if>
+	<c:if test='${insertResult eq FAIL }'>
+		<script>
+			alert('1방법. 가입실패');
+		</script>
+	</c:if>
 	<table>
 		<tr>
 			<th>순번</th>
@@ -26,7 +51,7 @@
 				<td colspan="6">회원이 없습니다</td>
 			</tr>
 		</c:if>
-		<c:set var="no" value="1"/>
+		<c:set var="no" value="1" />
 		<c:forEach var="member" items="${memberList }">
 			<tr>
 				<td>${no }</td>
@@ -42,8 +67,8 @@
 		</c:forEach>
 	</table>
 	<p>
-	<button onclick="location.href='${conPath}/memberJoinView.do'">회원가입</button>
-	<button onclick="location.href='${conPath}/'">처음으로</button>
+		<button onclick="location.href='${conPath}/memberJoin.do'">회원가입</button>
+		<button onclick="location.href='${conPath}/'">처음으로</button>
 	</p>
 </body>
 </html>
