@@ -8,11 +8,10 @@ import com.lec.ex.dto.Person;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class UpdateService implements Service {
+public class UpdateService2 implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		PersonRepository repository = PersonRepository.getInstance();
 		int id = Integer.parseInt(request.getParameter("id"));
 		String name = request.getParameter("name");
 		String tel = request.getParameter("tel");
@@ -23,10 +22,25 @@ public class UpdateService implements Service {
 			birth = Date.valueOf(birthStr);
 		}
 		String memo = request.getParameter("memo");
-		Person person = new Person(id, name, tel, address, birth, memo, null);
 
-		int updateResult = repository.updatePerson(person);
-		System.out.println(updateResult == PersonRepository.SUCCESS ? "수정성공" : "수정실패");
+		PersonRepository repository = PersonRepository.getInstance();
+		Person person = repository.getPerson(id);
+		if (!name.equals("")) {
+			person.setName(name);
+		}
+		if (!tel.equals("")) {
+			person.setTel(tel);
+		}
+		if (!address.equals("")) {
+			person.setAddress(address);
+		}
+		person.setBirth(birth);
+		if (!memo.equals("")) {
+			person.setMemo(memo);
+		}
+		int result = repository.updatePerson(person);
+		System.out.println(result == PersonRepository.SUCCESS ? "수정2성공" : "수정2실패");
+
 	}
 
 }

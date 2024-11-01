@@ -33,14 +33,14 @@ SELECT * FROM PERSON;
 -- 1. LIST (PAGING 포함) : public ArrayList<Person> getPersonList(int startRow, int endRow) : 몇등~몇등
 SELECT * 
 	FROM (
-		SELECT *
+		SELECT ROWNUM RN, A.*
 			FROM (
-				SELECT ROWNUM RN, P.*
-					FROM PERSON P
-					ORDER BY ID DESC
-			)
+				SELECT *
+					FROM PERSON 
+					ORDER BY ID desc
+			) A
 	)
-	WHERE RN BETWEEN 2 AND 2;
+	WHERE RN BETWEEN 11 AND 20;
 	
 -- 2. getCount (PAGING처리시 필요한 전체 갯수)
 SELECT COUNT(*) CNT FROM PERSON;

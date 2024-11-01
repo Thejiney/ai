@@ -87,15 +87,16 @@ public class PersonRepository {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		//@formatter:off
-		String sql = "SELECT *"
-				+ "	FROM ("
-				+ "		SELECT *"
-				+ "			FROM ("
-				+ "				SELECT ROWNUM RN, P.*"
-				+ "					FROM PERSON P"
-				+ "					ORDER BY ID DESC"
-				+ "			)"
-				+ "	)" + "	WHERE RN BETWEEN ? AND ?";
+		String sql = "SELECT * \r\n"
+				+ "	FROM (\r\n"
+				+ "		SELECT ROWNUM RN, A.*\r\n"
+				+ "			FROM (\r\n"
+				+ "				SELECT *\r\n"
+				+ "					FROM PERSON\r\n"
+				+ "					ORDER BY ID desc\r\n"
+				+ "			) A\r\n"
+				+ "	)\r\n"
+				+ "	WHERE RN BETWEEN ? AND ?";
 		//@formatter:on
 		try {
 			conn = getConnection();
