@@ -1,0 +1,5 @@
+1.HttpServletResponse 클래스
+RequestDispatcher 클래스와 동일하게 요청을 위임하는 클래스.
+RequestDispatcher  클래스와 차이점은 요청 받은 요청객체를 위임 받은 컴포넌트에 전달 하는 것이 아닌, 새로운 요청객체를 생성
+2.RequestDispatcher 클래스 ; 내가 받은 요청을 내가 처리하지 않고 다른 쪽으로 위임해 버릴 때 그것을 포워드 한다고 한다.
+※ Request 객체는 파라미터에 값을 넣어 전달하기도 하고 attribute에 set하여 전달하기도 한다 ※
