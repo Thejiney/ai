@@ -1,0 +1,22 @@
+①출력 태그 <c:out>
+<c:out value=“출력값” default=“기본값” escapeXml=“true or false”> false를 주면 특수기호를 해석
+②변수 설정 태그 <c:set>
+<c:set var=“변수명” value=“설정값” target=“객체” property=“값” scope=“범위”>어떤 객체의 속성값을 변수로 지정
+③변수를 제거하는 태그 <c:remove>
+<c:remove var=“변수명” scope=“범위”>
+④예외 처리 태그 <c:catch>
+<c:catch var=“변수명”>
+⑤제어문(if)태그 <c:if>
+<c:if test=“조건” var=“조건 처리 변수명” scope=“범위”>
+⑥제어문 태그 : <c:choose>
+<c:choose>
+<c:when test=“조건1”> 처리 내용 </c:when>
+<c:when test=“조건2”> 처리 내용 </c:when>
+<c:when test=“조건3”> 처리 내용 </c:when>
+<c:otherwise> 처리 내용 </c:otherwise>
+</c:choose>
+⑦반복문(for) 태그 : <c:forEach>
+<c:forEach items=“객체명” begin=“시작 인덱스” end=“끝 인덱스” step=“증감식” var=“변수명” varStatus=“상태변수”>
+<c:forTokens var=“변수명” item=전체스트링 delims=구분자>
+⑧페이지 이동태그 <c:redirect url=”url”>
+<c:redirect url=“url”>
