@@ -1,0 +1,21 @@
+- 모듈 : 함수, 변수, 클래스 등을 담고 있는 파이썬 코드 파일(*.py)
+- 파이썬 표준 모듈 200여개는 파이썬 인터프리터와 함께 install 됨
+- anaconda는 1500개 이상의 패키지 install(정확한 갯수는 버전마다 상이)
+import A             - A 모듈을 로드
+import A as B        - A 모듈을 B이름으로 로드
+from A import B      - A 모듈안의 B함수(클래스|변수)를 가져옴
+from A import B as C - A모듈안의 B함수를 C이름으로 
+
+from A import B        - A패키지안의 B모듈을 가져옴
+from A.B import C      - A패키지안의 B모듈안의 C함수를 가져옴
+from A import B as C   - A패키지안의 B모듈을 C이름으로 가져옴
+from A.B import C as D - A패키지안의 B모듈안의 C함수를 D이름으로 가져옴
+
+사용자 정의 모듈
+- 함수나 클래스등을 파이썬 파일에 저장해서 모듈을 만들고 재사용할 수 있음
+- 모듈을 가져오는 순서 (1)표준모듈 (2)sys.path 변수에 저장된 경로
+
+패키지 설치 및 삭제
+- 패키지 설치 : pip install 패키지명[==버전]   / conda install 패키지명[==버전]
+- 패키지 확인 : pip show 패키지명             / conda list 패키지명
+- 패키지 삭제 ; pip uninstall 패키지명        / conda remove 패키지명
