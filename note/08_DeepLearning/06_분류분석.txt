@@ -1,0 +1,14 @@
+# 분류분석
+```
+1. 데이터셋 생성 및 전처리 : 훈련셋600, 검증셋100, 테스트셋68으로 분리, 종속변수의 원핫인코딩
+2. 모델생성(input 8, target 2) : 출력층에서의 활성화함수 'softmax'
+    * model.summary()에서 파라미터 수 확인
+3. 모델학습과정 설정 (loss='categorical_crossentropy' metrics=['accuracy']
+4. 모델 학습 : validation_data=[X_val, y_val] 추가해서 학습
+5. 모델 학습 평가 : 그래프(hist.history.keys()를 확인후 4가지)
+                  평가(X_test, Y_test)
+                  교차표(pd.crosstab 이용)
+6. 모델 사용하기 - 예측
+                 0        1
+                 0.9912   0.00124
+```
