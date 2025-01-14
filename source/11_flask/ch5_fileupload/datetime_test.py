@@ -1,4 +1,4 @@
-# 날짜시간형 데이터를 원하는 format으로 출력(python, Jinja2,
+# 날짜시간형 데이터를 원하는 format으로 출력(python, Jinja2)
 import datetime
 dt = datetime.datetime.now()
 print(dt)
