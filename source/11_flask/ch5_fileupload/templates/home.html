@@ -30,7 +30,9 @@
             {% for info in infos %}
               <tr>
                 <th scope="row">{{ loop.index }}</th>
-                <td onclick="location.href='/download/{{info['name']}}">{{ info['name'] }}</td>
+                <td onclick="location.href='/download/{{ info['name'] }}'">
+                  {{ info['name'] }}
+                </td>
                 <td><a href="/del/{{ info['name'] }}">삭제</a></td>
                 <td>{{ info['create'].strftime('%Y-%m-%d %H:%M') }}</td>
                 <td>{{ info['modify'].strftime('%Y-%m-%d %H:%M') }}</td>
