@@ -1,6 +1,6 @@
 # src -> 소스 루트
-# pip install uvicorn
-# pip install uvicorn
+# pip install fastapi
+# pip install uvicorn --no-cache-dir
 # pip install jinja2
 # pip install python-multipart (post사용)
 
@@ -11,20 +11,17 @@ from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse #redirect
 # from pydantic import BaseModel # 자동 타입 체크
 from models import ToDoRequest
-from fastapi import Form # create(POST방식) 떄 사용
+from fastapi import Form # create(POST방식) 때 사용
 from fastapi import HTTPException
 import os
 
-app=FastAPI()
+app = FastAPI()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__)) # 현 폴더의 절대경로
 app.mount('/static',
           StaticFiles(directory=os.path.join(BASE_DIR, '../static')),
           name='static')
-templates = Jinja2Templates(directory=os.path.join(BASE_DIR, '../templates'))
-
-@app.get('/')
-async def health_check_handler():
-  return {'status':'ok'}
+templates = Jinja2Templates(directory=os.path.join(BASE_DIR,
+                                                   '../templates'))
 
 todo_data = {
   1:{
@@ -37,21 +34,49 @@ todo_data = {
     'contents':'FastAPI 공부',
     'is_done':False
   },
-  3: {
-    'id': 3,
-    'contents': '머신러닝 공부',
-    'is_done': False
-  },
-  4:{
-    'id':4,
-    'contents':'Django 공부',
+  3:{
+    'id':3,
+    'contents':'머신러닝 공부',
     'is_done':False
-  },
+  }
 }
+@app.get('/')
+# async def health_check_handler():
+#   return {'status':'ok'}
 # /todos(할일 1부터 출력) 또는 /todos?order=desc(할일 역순으로 출력)
 @app.get('/todos')
-async def get_todos_handler(order:str|None=None):
-  todos = list(todo_data.values())  # 딕셔너리를 리스트로 변환
-  if order and order.upper() == 'DESC':
+@app.post('/todos')
+async def get_todos_handler(request:Request,
+                            order:str|None=None):
+  todos = list(todo_data.values()) # 딕셔너리를 리스트로 변환
+  if order and order.upper()=='DESC':
     todos = todos[::-1]
-  return todos
+  next_id = max(todo_data.keys())+1
+  return templates.TemplateResponse('todos.html', # todo 목록, todo 입력 form
+                                    {'request':request,
+                                     'todos':todos,
+                                     'next_id':next_id,
+                                     'order':order.upper() if order else ''})
+
+@app.get('/todos/{todo_id}')
+async def get_todo_detail_handler(request:Request, todo_id:int):
+  todo = todo_data.get(todo_id, {})# todo_data[todo_id]
+  return templates.TemplateResponse('todo.html',
+                                    {'request':request,
+                                     'todo':todo})
+
+@app.post('/create')
+async def create_todo_handler(todo:ToDoRequest=Form()):
+  # print('form태그로부터 입력된 todo :',todo)
+  todo_data[todo.id] = todo.dict()
+  # {'id':todo.id, 'contents':todo.contents, 'is_done':todo.is_done}
+  return RedirectResponse('/todos')
+
+@app.delete('/delete/{todo_id}', status_code=200)
+async def delete_todo_handler(todo_id:int):
+  # del todo_data[todo_id]
+  # key가 없는 todo_id를 입력할 경우 None
+  todo = todo_data.pop(todo_id, None)
+  if todo:
+    return f'{todo_id}번 todo 삭제 성공'
+  return f'{todo_id}는 등록되지 않는 todo여서 삭제 실패'
