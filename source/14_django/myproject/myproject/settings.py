@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django_extensions",
-    "blog",
-    "articles",
+    "django_extensions", # 추가 앱 등록(shell_plus 사용하기
+    "blog", # 앱등록
+    'accounts',
+    'book',
+    'django.contrib.humanize', # intcomma(세자리마다 ,) 필터 사용
 ]
 
 MIDDLEWARE = [
@@ -55,10 +57,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "myproject.urls"
 
+import os
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR,'myproject','templates'),],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
