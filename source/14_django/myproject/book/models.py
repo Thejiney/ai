@@ -10,16 +10,21 @@ def min_length_3_valdator(value):
 
 # Create your models here.
 class Book(models.Model):
-  title=models.CharField(max_length=50)
-  author = models.CharField(max_length=50,
+  title=models.CharField(verbose_name='책제목',
+                         max_length=50)
+  author = models.CharField(verbose_name='글쓴이',
+                            max_length=50,
                             validators=[# min_length_3_valdator
                                          MinLengthValidator(3),])
-  publisher = models.CharField(max_length=50)
+  publisher = models.CharField(verbose_name='출판사',
+                               max_length=50, blank=True, null=True)
   publication_date = models.DateTimeField(auto_now_add=True)
-  sales = models.IntegerField(default=1000,
+  sales = models.IntegerField(verbose_name='판매가',
+                              default=1000,
                               validators=[MinValueValidator(0),
                                           MaxValueValidator(1000000),])
   ip = models.GenericIPAddressField(blank=True, null=True)
+
 
   def __str__(self):
     return "{}:{}著 {:,}원 from{}".format(self.title,
