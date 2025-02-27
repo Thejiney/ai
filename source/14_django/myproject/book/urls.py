@@ -4,7 +4,7 @@ from . import views
 /book/ => book_list
 /book/new => book추가(book_new)
 /book/1/edit => 1번 book 수정(book_edit)
-/book/1/delete => 1번 book 삭제(book_delete
+/book/1/delete => 1번 book 삭제(book_delete)
 '''
 
 app_name = 'book'

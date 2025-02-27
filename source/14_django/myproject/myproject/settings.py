@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
+from django.conf.global_settings import MEDIA_URL, MEDIA_ROOT
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'accounts',
     'book',
     'django.contrib.humanize', # intcomma(세자리마다 ,) 필터 사용
+    'article',
 ]
 
 MIDDLEWARE = [
@@ -123,8 +126,14 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
-
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR, 'myproject', 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, '_staticfiles') #운영시 경로
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_URL = '/media/' # media파일의 url
+MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
