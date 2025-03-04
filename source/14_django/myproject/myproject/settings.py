@@ -9,10 +9,8 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os.path
 from pathlib import Path
-
-from django.conf.global_settings import MEDIA_URL, MEDIA_ROOT
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,8 +19,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-from decouple import config
 # SECURITY WARNING: keep the secret key used in production secret!
+from decouple import config
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -40,12 +38,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django_extensions", # 추가 앱 등록(shell_plus 사용하기
+    "django_extensions", # 추가 앱 등록(shell_plus 사용하기 위함 model들 자동 import)
     "blog", # 앱등록
-    'accounts',
-    'book',
-    'django.contrib.humanize', # intcomma(세자리마다 ,) 필터 사용
-    'article',
+    "accounts",
+    "django.contrib.humanize", # intcomma(세자리마다 ,) 필터 사용
+    "article",
+    "filetest",
+    "book",
 ]
 
 MIDDLEWARE = [
@@ -60,11 +59,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "myproject.urls"
 
-import os
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR,'myproject','templates'),],
+        "DIRS": [
+           os.path.join(BASE_DIR, 'myproject', 'templates'),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -95,25 +95,26 @@ DATABASES = {
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    # }, # user 속성과 유사한 경우 X
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    #     "OPTIONS":{"min_length":2}
+    # }, # 최소 2자리 이상
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    # }, # 흔한 비밀번호 X
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    # }, # 숫자만인 비밀번호 X
 ]
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = "ko-kr"
+LANGUAGE_CODE = "ko-kr" # 한국어 셋팅
 
 TIME_ZONE = "Asia/Seoul"
 
@@ -121,19 +122,30 @@ USE_I18N = True
 
 USE_TZ = False
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-os.path.join(BASE_DIR, 'myproject', 'static'),
+	os.path.join(BASE_DIR, 'myproject', 'static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, '_staticfiles') #운영시 경로
+STATIC_ROOT = os.path.join(BASE_DIR, '..', '_staticfiles') #운영시 static 경로
+
+MEDIA_URL = '/media/' # media파일의 url
+MEDIA_ROOT = os.path.join(BASE_DIR, '_media') # 업로드한 파일이 저장될 폴더
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-MEDIA_URL = '/media/' # media파일의 url
-MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.naver.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'naver-id@naver.com'
+EMAIL_HOST_PASSWORD = '비밀번호'
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
